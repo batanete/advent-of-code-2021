@@ -16,7 +16,7 @@ def get_frequencies(lines):
 electable = lines[:]
 ind = 0
 while len(electable) != 1:
-	# if frequence > 50% of line numbers, most common is 1, else it's 0
+	# if frequence >= 50% of line numbers, most common is 1, else it's 0
 	list_most_common = ['1' if i >= len(electable) / 2 else '0' for i in get_frequencies(electable)]
 	electable = [n for n in electable if n[ind] == list_most_common[ind]]
 	ind += 1
