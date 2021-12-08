@@ -6,10 +6,9 @@ SIZE_MATRIX = 10000
 with open(PATH) as f:
 	lines = [line.strip() for line in f.readlines()]
 
-# could be done with numpy arrays for better performance
-matrix = []
-for i in range(SIZE_MATRIX):
-	matrix.append([0] * SIZE_MATRIX)
+# this is better than list of lists(more memory efficient)
+matrix = {}
+n_marked_with_two = 0
 
 n_marked_with_two = 0
 
@@ -32,13 +31,13 @@ def mark(line):
 	global n_marked_with_two
 
 	direction = get_direction(line)
-	print(line, direction)
 
 	current = line[0][:]
 	while True:
+		current_tuple = tuple(current)
 
-		matrix[current[1]][current[0]] += 1
-		times_marked = matrix[current[1]][current[0]]
+		times_marked = matrix.get(current_tuple, 0) + 1
+		matrix[current_tuple] = times_marked
 
 		if times_marked == 2:
 			n_marked_with_two += 1
