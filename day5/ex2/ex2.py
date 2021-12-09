@@ -8,7 +8,6 @@ with open(PATH) as f:
 
 # this is better than list of lists(more memory efficient)
 matrix = {}
-
 n_marked_with_two = 0
 
 def is_vertical(line):
