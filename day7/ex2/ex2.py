@@ -3,18 +3,9 @@ PATH = 'ex2.txt'
 with open(PATH) as f:
 	lines = [line.strip() for line in f.readlines()]
 
-sums = [0, 1]
 def distance(p1, p2):
 	dist = abs(p1 - p2)
-
-	if len(sums) > dist + 1:
-		return sums[dist]
-
-	while len(sums) < dist + 1:
-		sums.append(len(sums) + sums[-1])
-
-	
-	return sums[-1]
+	return (dist + 1) * dist / 2
 
 crabs = [int(i) for i in lines[0].split(',')]
 
