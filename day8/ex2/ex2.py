@@ -10,19 +10,6 @@ unique_num_by_segments = {
 	7: 8,
 }
 
-uncyphered_segment_to_num = {
-	"abcefg": 0,
-	"cf": 1,
-	"acdeg": 2,
-	"acdfg": 3,
-	"bcdf": 4,
-	"abdfg": 5,
-	"abdefg": 6,
-	"acf": 7,
-	"abcdefg": 8,
-	"abcdfg": 9,
-}
-
 def contains_all_chars_of_other(str1, str2):
 	for c in str2:
 		if c not in str1:
