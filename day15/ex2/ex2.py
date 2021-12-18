@@ -86,9 +86,9 @@ def is_feasible(x, y, risk_before):
 
 
 best_path = heuristic(0, 0)
-queue = [[(0, 0), 0, []]]
-while queue:
-	next = queue.pop()
+stack = [[(0, 0), 0, []]]
+while stack:
+	next = stack.pop()
 	x, y = next[0]
 	risk_before = next[1]
 
@@ -116,7 +116,7 @@ while queue:
 	]
 
 	for conn in connections:
-		queue.append([conn, risk])
+		stack.append([conn, risk])
 
 # dont count risk for entrance
 best_path -= get(0, 0)
