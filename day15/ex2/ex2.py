@@ -105,7 +105,6 @@ while queue:
 
 	elif (x, y) == end:
 		if best_path is None or best_path > risk:
-			print(best_path)
 			best_path = risk
 			continue
 
